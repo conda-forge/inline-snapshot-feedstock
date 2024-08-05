@@ -17,7 +17,7 @@ build:
 requirements:
   host:
     - python >=3.8
-    - poetry-core >=1.0.0
+    - hatchling
     - pip
   run:
     - python >=3.8
@@ -28,6 +28,7 @@ requirements:
     - rich >=13.7.1
     - toml >=0.10.2
     - types-toml >=0.10.8.7
+    - typing-extensions
 
 test:
   imports:
