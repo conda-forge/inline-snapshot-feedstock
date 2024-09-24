@@ -1,5 +1,5 @@
 {% set name = "inline-snapshot" %}
-{% set version = "0.13.0" %}
+{% set version = "0.13.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/inline_snapshot-{{ version }}.tar.gz
-  sha256: a8a773eedfdc78f4bdbcc481a7f147f715e822756885342c8e27a8b9a995073d
+  sha256: 968dbdfbcd034a62e06d8b69c0badd181988ff0b5ea2d1f5718c203db0087343
 
 build:
   noarch: python
