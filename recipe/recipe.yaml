@@ -1,18 +1,21 @@
-{% set name = "inline-snapshot" %}
-{% set version = "0.13.4" %}
+schema_version: 1
+
+context:
+  name: inline-snapshot
+  version: 0.13.4
 
 package:
-  name: {{ name|lower }}
-  version: {{ version }}
+  name: ${{ name|lower }}
+  version: ${{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/inline_snapshot-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/${{ name[0] }}/${{ name }}/inline_snapshot-${{ version }}.tar.gz
   sha256: 4225b73b6f8807d780424aee63e39a3bfa7688851d9cd90579d4b164b2d2c870
 
 build:
-  noarch: python
-  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   host:
@@ -30,19 +33,17 @@ requirements:
     - types-toml >=0.10.8.7
     - typing-extensions
 
-test:
-  imports:
-    - inline_snapshot
-  commands:
-    - pip check
-  requires:
-    - pip
+tests:
+  - python:
+      imports:
+        - inline_snapshot
+      pip_check: true
 
 about:
-  home: https://github.com/15r10nk/inline-snapshots
   summary: golden master/snapshot/approval testing library which puts the values right into your source code
   license: MIT
   license_file: LICENSE
+  homepage: https://github.com/15r10nk/inline-snapshots
 
 extra:
   recipe-maintainers:
