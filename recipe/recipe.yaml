@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: inline-snapshot
-  version: 0.13.4
+  version: 0.22.3
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/${{ name[0] }}/${{ name }}/inline_snapshot-${{ version }}.tar.gz
-  sha256: 4225b73b6f8807d780424aee63e39a3bfa7688851d9cd90579d4b164b2d2c870
+  sha256: 34c02a8567dafc88bb720872edde792ff5e665c8726f6af3bfc5fa85dd0016be
 
 build:
   number: 0
@@ -25,13 +25,10 @@ requirements:
   run:
     - python >=3.8
     - asttokens >=2.0.5
-    - black >=23.3.0
-    - click >=8.1.4
-    - executing >=2.0.0
+    - executing >=2.2.0
     - rich >=13.7.1
-    - toml >=0.10.2
-    - types-toml >=0.10.8.7
-    - typing-extensions
+    - tomli >=2.0.0
+    - pytest >=8.3.4
 
 tests:
   - python:
