@@ -9,7 +9,7 @@ package:
   version: ${{ version }}
 
 source:
-  url: https://pypi.io/packages/source/${{ name[0] }}/${{ name }}/inline_snapshot-${{ version }}.tar.gz
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/inline_snapshot-${{ version }}.tar.gz
   sha256: 34c02a8567dafc88bb720872edde792ff5e665c8726f6af3bfc5fa85dd0016be
 
 build:
@@ -19,11 +19,11 @@ build:
 
 requirements:
   host:
-    - python >=3.8
+    - python ${{ python_min }}.*
     - hatchling
     - pip
   run:
-    - python >=3.8
+    - python >=${{ python_min }}
     - asttokens >=2.0.5
     - executing >=2.2.0
     - rich >=13.7.1
@@ -32,6 +32,7 @@ requirements:
 
 tests:
   - python:
+      python_version: ${{ python_min }}.*
       imports:
         - inline_snapshot
       pip_check: true
