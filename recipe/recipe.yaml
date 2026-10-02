@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: inline-snapshot
-  version: "0.35.4"
+  version: "0.36.0"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/inline_snapshot-${{ version }}.tar.gz
-  sha256: 82432a58b7ea77a172515f5024cd26fdea8dc0f873c7a4251e4e0471a914db14
+  sha256: c45dfc34affc42116fd23e22665fb58e59426c564ddb17114a6833f61a31b1f7
 
 build:
   number: 0
